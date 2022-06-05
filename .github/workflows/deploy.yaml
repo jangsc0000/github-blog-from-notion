@@ -1,8 +1,7 @@
 name: Deploy
-on: push
-  
-  #schedule:
-  #  - cron: "0 * * * *"
+on: 
+  schedule:
+    - cron: "0 0 * * *"
 
 jobs:
   deploy-blog:
@@ -41,7 +40,6 @@ jobs:
       # install dependencies if cache does not exist
       #----------------------------------------------
       - name: Install dependencies
-        if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
         run: |
           cd ${GITHUB_WORKSPACE}/loconotion
           poetry install --no-interaction --no-root
@@ -50,8 +48,10 @@ jobs:
       #----------------------------------------------
       - name: Run loconotion
         run: |
+          cd ${GITHUB_WORKSPACE}
+          mv config loconotion
           cd ${GITHUB_WORKSPACE}/loconotion
-          poetry run python loconotion ${GITHUB_WORKSPACE}/config/blog.toml
+          poetry run loconotion ${GITHUB_WORKSPACE}/loconotion/config/blog.toml
       #----------------------------------------------
       #                   deploy 🚀
       #----------------------------------------------
@@ -60,4 +60,4 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           branch: gh-pages
-          folder: loconotion/dist
+          folder: loconotion/docs

@@ -7,7 +7,12 @@ name = "docs"
 
 # the notion.so page to being parsing from. This page will become the index.html
 # of the generated site, and loconotation will parse all sub-pages present on the page
-page = "https://kajago.notion.site/Tech-Blog-Kajago-b4ce5faf408b4f4f9cf6050b5cc07a42"
+page = "https://kajago.notion.site/Tech-Blog-b4ce5faf408b4f4f9cf6050b5cc07a42"
+
+# the url address where this website will be published
+base_url = "https://jangsc0000.github.io"
+
+output = "docs"
 
 ## Global Site Settings ##
 # this [site] table defines override settings for the whole site
@@ -23,6 +28,11 @@ page = "https://kajago.notion.site/Tech-Blog-Kajago-b4ce5faf408b4f4f9cf6050b5cc0
   [[site.meta]]
   name = "description"
   content = "장승철의 개인 기술 블로그입니다."
+
+  # <meta name="google-site-verification" content="" />
+  [[site.meta]]
+  name = "google-site-verification"
+  content =""
 
   ## Custom Fonts ##
   # you can specify the name of a google font to use on the site - use the font embed name
@@ -70,4 +80,4 @@ page = "https://kajago.notion.site/Tech-Blog-Kajago-b4ce5faf408b4f4f9cf6050b5cc0
 
   [[site.inject.head.script]]
   type="text/javascript"
-  src="https://www.googletagmanager.com/gtag/js?id=G-QP1667MH77"
+  src="https://www.googletagmanager.com/gtag/js?id="
