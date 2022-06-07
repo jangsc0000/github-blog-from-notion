@@ -3,7 +3,7 @@
 # check out https://github.com/toml-lang/toml for more info on the toml format
 
 # name of the folder that the site will be generated in
-name = "docs"
+output = "docs"
 
 # the notion.so page to being parsing from. This page will become the index.html
 # of the generated site, and loconotation will parse all sub-pages present on the page
@@ -12,7 +12,7 @@ page = "https://kajago.notion.site/Tech-Blog-b4ce5faf408b4f4f9cf6050b5cc07a42"
 # the url address where this website will be published
 base_url = "https://jangsc0000.github.io"
 
-output = "docs"
+
 
 ## Global Site Settings ##
 # this [site] table defines override settings for the whole site
